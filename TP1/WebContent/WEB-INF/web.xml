@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>CatalogDisplayerJSP</display-name>
+    <servlet-name>CatalogDisplayerJSP</servlet-name>
+    <servlet-class>servlet.CatalogDisplayerJSP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CatalogDisplayerJSP</servlet-name>
+    <url-pattern>/CatalogDisplayerJSP</url-pattern>
+  </servlet-mapping>
 </web-app>
