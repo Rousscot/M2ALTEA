@@ -10,6 +10,28 @@ public class GuestUsers {
 	protected HashMap<String, Utilisateur> lesUtilisateurs;
 	protected static GuestUsers instance;
 	protected long idUser;
+	
+	
+
+	public HashMap<String, Utilisateur> getLesUtilisateurs() {
+		return lesUtilisateurs;
+	}
+
+	public void setLesUtilisateurs(HashMap<String, Utilisateur> lesUtilisateurs) {
+		this.lesUtilisateurs = lesUtilisateurs;
+	}
+
+	public long getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(long idUser) {
+		this.idUser = idUser;
+	}
+
+	public static void setInstance(GuestUsers instance) {
+		GuestUsers.instance = instance;
+	}
 
 	private GuestUsers() {
 		lesUtilisateurs = new HashMap<String, Utilisateur>();
