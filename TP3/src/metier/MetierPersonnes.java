@@ -34,13 +34,14 @@ public class MetierPersonnes {
 
 	public static Personne getPersonne(String login, String password) {
 
-		for (Map.Entry<String, Personne> entry : personnesInstance.getListePersonne().entrySet()) {
+		for (Map.Entry<String, Personne> entry : getPersonnes().getListePersonne().entrySet()) {
 			Personne currentPersonne = entry.getValue();
 			if (currentPersonne.getLogin().equals(login) && currentPersonne.getPassword().equals(password)) {
 				return currentPersonne;
 			}
 		}
-		throw new NullPointerException("Pas de personne avec ce login et ce mot de passe");
+		
+		return null;
 	}
 
 }

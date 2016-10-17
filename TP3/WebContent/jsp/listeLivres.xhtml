@@ -1,0 +1,14 @@
+<html:dataTable value="#{listeLivres.livres}" var="livre" rowClasses="row1,row2" headerClass="heading" styleClass="dataTable">
+	<html:column>
+		<core:facet name="header">
+			<core:verbatim>Ref</core:verbatim>
+		</core:facet>
+		<html :outputText value="#{livre.id}" />
+	</html:column>
+	<html:column>
+		<core:facet name="header">
+			<core:verbatim>Titre</core:verbatim>
+		</core:facet>
+		<html:outputText value="#{livre.titre}" />
+	</html:column>
+</html:dataTable>

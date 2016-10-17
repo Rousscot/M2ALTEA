@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:core="http://java.sun.com/jsf/core"
+	xmlns:html="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<title>Premier formulaire avec JSF</title>
+</head>
+<body>
+	<core:view>
+		<html:form>
+			<html:outputText value="login" />
+			<html:inputText  id="login" value="#{login.login}"/>
+			<html:outputText value="password"/>
+			<html:inputSecret id="password" value="#{login.password}"/>
+			<html:commandButton value="Connecter" action = "#{login.validate}"/>
+		</html:form>
+	</core:view>
+</body>
+</html>
