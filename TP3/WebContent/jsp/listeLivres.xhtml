@@ -1,14 +1,57 @@
-<html:dataTable value="#{listeLivres.livres}" var="livre" rowClasses="row1,row2" headerClass="heading" styleClass="dataTable">
-	<html:column>
-		<core:facet name="header">
-			<core:verbatim>Ref</core:verbatim>
-		</core:facet>
-		<html :outputText value="#{livre.id}" />
-	</html:column>
-	<html:column>
-		<core:facet name="header">
-			<core:verbatim>Titre</core:verbatim>
-		</core:facet>
-		<html:outputText value="#{livre.titre}" />
-	</html:column>
-</html:dataTable>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:core="http://java.sun.com/jsf/core"
+	xmlns:html="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+	<core:view>
+		<html:form>
+			<html:dataTable value="#{listeLivres.livres}" var="livre"
+				rowClasses="row1,row2" headerClass="heading" styleClass="dataTable">
+				<html:column>
+					<html:selectBooleanCheckbox
+						value="#{listeLivres.checkedElements[livre.id]}" />
+				</html:column>
+				<html:column>
+					<core:facet name="header">
+						<core:verbatim>Ref</core:verbatim>
+					</core:facet>
+					<html:outputText value="#{livre.id}" />
+				</html:column>
+				<html:column>
+					<core:facet name="header">
+						<core:verbatim>Titre</core:verbatim>
+					</core:facet>
+					<html:outputText value="#{livre.titre}" />
+				</html:column>
+				<html:column>
+					<core:facet name="header">
+						<core:verbatim>Auteur</core:verbatim>
+					</core:facet>
+					<html:outputText value="#{livre.auteur}" />
+				</html:column>
+				<html:column>
+					<core:facet name="header">
+						<core:verbatim>Resume</core:verbatim>
+					</core:facet>
+					<html:outputText value="#{livre.resume}" />
+				</html:column>
+				<html:column>
+					<core:facet name="header">
+						<core:verbatim>Image</core:verbatim>
+					</core:facet>
+					<html:outputText value="#{livre.image}" />
+				</html:column>
+			</html:dataTable>
+
+			<html:commandButton value="Emprunter les livres"
+				action="#{listeLivres.emprunterLivres}">
+				<core:setPropertyActionListener target="#{listeLivres.login}"
+					value="#{login.login}" />
+			</html:commandButton>
+		</html:form>
+
+	</core:view>
+</body>
+</html>

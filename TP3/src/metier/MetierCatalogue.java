@@ -11,7 +11,7 @@ public class MetierCatalogue {
 
 	public static ArrayList<Livre> getLivreEmprunte(String login){
 		ArrayList<Livre> livres = new ArrayList<>();
-		for(Livre livre : catalogue.getListeLivre()){
+		for(Livre livre : getCatalogue().getListeLivre()){
 			if(livre.getEmprunteur().equals(login)){
 				livres.add(livre);
 			}
@@ -21,7 +21,7 @@ public class MetierCatalogue {
 	
 	public static ArrayList<Livre> getLivreNonEmprunte(){
 		ArrayList<Livre> livres = new ArrayList<>();
-		for(Livre livre : catalogue.getListeLivre()){
+		for(Livre livre : getCatalogue().getListeLivre()){
 			if(livre.getEmprunteur()==null || livre.getEmprunteur().trim().isEmpty()){
 				livres.add(livre);
 			}
